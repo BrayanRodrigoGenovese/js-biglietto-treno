@@ -1,12 +1,20 @@
-const km = prompt("Quanti chilometri devi percorrere?");
+let km = NaN;
+while (Number.isNaN(km)) {
+  km = parseInt(prompt("Quanti chilometri devi percorrere?"));
+}
 console.log(km);
-const age = prompt("Quanti anni hai?");
-console.log(age);
-const price = 0.21;
-console.log(price);
 
-let ticketPrice = km * price;
-console.log(`standard price = ${price}€`);
+let age = NaN;
+while (Number.isNaN(age)) {
+  age = parseInt(prompt("Quanti anni hai?"));
+}
+console.log(age);
+
+const pricePerKm = 0.21;
+console.log(pricePerKm);
+
+let ticketPrice = km * pricePerKm;
+console.log(`standard price = ${ticketPrice}€`);
 if (age <= 18) {
   ticketPrice *= 0.8;
   console.log("<=18 discount");
