@@ -10,4 +10,4 @@ if (age <= 18) {
 }
 
 console.log(ticketPrice);
-alert(`il costo del biglietto è: ${ticketPrice}`);
+alert(`il costo del biglietto è ${ticketPrice.toFixed(2)} €`);
