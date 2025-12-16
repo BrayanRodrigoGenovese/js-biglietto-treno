@@ -1,21 +1,38 @@
+let userName = NaN;
+
+while (!isNaN(parseInt(userName))) {
+  userName = prompt("Inserisci il tuo nome:");
+}
+userName.toLowerCase();
+console.log(userName);
+
 let km = NaN;
-while (Number.isNaN(km)) {
+while (isNaN(km)) {
   km = parseInt(prompt("Quanti chilometri devi percorrere?"));
 }
 console.log(km);
 
 let age = NaN;
-while (Number.isNaN(age)) {
+while (isNaN(age)) {
   age = parseInt(prompt("Quanti anni hai?"));
 }
 console.log(age);
 
-const pricePerKm = 0.21;
-console.log(pricePerKm);
+let pricePerKm = NaN;
+if (userName == "tiziano") {
+  pricePerKm = 0.5;
+} else {
+  pricePerKm = 0.21;
+}
+console.log(`prezzo per km = ${pricePerKm}€`);
 
 let ticketPrice = km * pricePerKm;
 console.log(`standard price = ${ticketPrice}€`);
-if (age <= 18) {
+
+if (userName == "artur") {
+  ticketPrice = 0;
+  console.log("Questo giro lo offre la casa!");
+} else if (age <= 18) {
   ticketPrice *= 0.8;
   console.log("<=18 discount");
 } else if (age >= 65) {
@@ -23,5 +40,9 @@ if (age <= 18) {
   console.log(">=65 discount");
 }
 
-console.log(ticketPrice);
-alert(`il costo del biglietto è ${ticketPrice.toFixed(2)} €`);
+console.log(ticketPrice.toFixed(2));
+if (ticketPrice == 0) {
+  alert(`Per te il biglietto è gratuito`);
+} else {
+  alert(`Il costo del biglietto è ${ticketPrice.toFixed(2)} €`);
+}
