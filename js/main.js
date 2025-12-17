@@ -7,19 +7,19 @@ let km = NaN;
 while (!isNaN(parseInt(userName)) || userName.length === 0) {
   userName = prompt("Inserisci il tuo nome:").toLowerCase();
 }
-console.log(userName);
+console.log(`name: ${userName}`);
 
 // age input validation
 while (isNaN(age) || age === 0) {
   age = parseInt(prompt("Quanti anni hai?"));
 }
-console.log(age);
+console.log(`age: ${age}`);
 
 // km input validation
 while (isNaN(km) || km === 0) {
   km = parseInt(prompt("Quanti chilometri devi percorrere?"));
 }
-console.log(km);
+console.log(`km: ${km}`);
 
 // price per km tweaking
 if (userName === "tiziano") {
@@ -27,11 +27,11 @@ if (userName === "tiziano") {
 } else {
   pricePerKm = 0.21; // pricePerKm standard users
 }
-console.log(`prezzo per km = ${pricePerKm}€`);
+console.log(`price per km: ${pricePerKm}€`);
 
 // ticket price calculation
 let ticketPrice = km * pricePerKm;
-console.log(`standard price = ${ticketPrice}€`);
+console.log(`standard price: ${ticketPrice}€`);
 
 // apply discount if needed
 if (userName === "artur") {
@@ -45,7 +45,7 @@ if (userName === "artur") {
   console.log("over 65 discount");
 }
 
-console.log(ticketPrice.toFixed(2));
+console.log(`total price: ${ticketPrice.toFixed(2)}`);
 if (ticketPrice === 0) {
   alert(`Questo giro lo offre la casa!`);
 } else {
